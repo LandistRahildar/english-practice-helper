@@ -2,18 +2,24 @@
     const randomNumbersButton = document.getElementById("randomNumbersButton");
     const randomNumbersParagraph = document.getElementById("randomNumbersParagraph");
 
-    const generateRandomNumbers = function () {
+    const displayRandomNumbers = function () {
 
-        const firstRandomNumber = Math.floor(Math.random() * 1000 + 1);
-        const secondRandomNumber = Math.floor(Math.random() * 1000 + 1);
-        const thirdRandomNumber = Math.floor(Math.random() * 1000 + 1);
+        const generateRandomNumber = function (min = 111, max = 999) {
+            const difference = max - min;
+            let random = Math.random();
+            random = Math.floor(random * difference);
+            random = random + min;
+            return random;
+        }
 
         randomNumbersParagraph.innerHTML = `
-        ${firstRandomNumber}<br>
-        ${secondRandomNumber}<br>
-        ${thirdRandomNumber}<br>
+        ${generateRandomNumber()}<br>
+        ${generateRandomNumber()}<br>
+        ${generateRandomNumber()}<br>
+        ${generateRandomNumber()}<br>
+        ${generateRandomNumber()}<br>
         `;
     }
 
-    randomNumbersButton.addEventListener("click", generateRandomNumbers);
+    randomNumbersButton.addEventListener("click", displayRandomNumbers);
 }
