@@ -21,6 +21,7 @@
         `;
     }
 
+    //idea: text in button after click can change for 'another random numbers'
     randomNumbersButton.addEventListener("click", displayRandomNumbers);
 }
 
@@ -64,9 +65,38 @@
         `;
     }
 
+    //idea: text in button after click can change for 'another random dates'
     randomDatesButton.addEventListener("click", randomDate);
 }
 
 {
-    //here will be code for button 'Hint', where will be full names of the months, displyaing only when 'Random dates' button will be active
+    const hintButton = document.getElementById("hintButton");
+    const hintParagraph = document.getElementById("hintParagraph");
+
+    const displayHint = function () {
+        if (hintParagraph.display === "block") {
+            hintParagraph.display = "none";
+            hintButton.innerHTML = "Hint";
+            hintParagraph.innerHTML = ``;
+        } else {
+            hintParagraph.display = "block";
+            hintButton.innerHTML = "Hide hint";
+            hintParagraph.innerHTML = `
+            I - January<br>
+            II - February<br>
+            III - March<br>
+            VI - April<br>
+            V - May<br>
+            VI - June<br>
+            VII - July<br>
+            VIII - August<br>
+            IX - September<br>
+            X - October<br>
+            XI - November<br>
+            XII - December<br>
+            `;
+        }
+    }
+
+    hintButton.addEventListener("click", displayHint);
 }
