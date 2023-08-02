@@ -26,6 +26,10 @@
 }
 
 {
+    //here will be code for random numbers > 1111 < 9999, because it will be great warm-up before dates 
+}
+
+{
     const randomDatesButton = document.getElementById("randomDatesButton");
     const randomDatesParagraph = document.getElementById("randomDatesParagraph");
 
@@ -57,7 +61,7 @@
             return random;
         }
 
-        //here should be one line instead of three; how to fix this stupid months?
+        //here should be one line instead of three; how to make better version code of this stupid months?
         randomDatesParagraph.innerHTML = `
         ${randomDay()} ${months[firstRandomMonth]} ${generateRandomYear()}<br>
         ${randomDay()} ${months[secondRandomMonth]} ${generateRandomYear()}<br>
@@ -76,11 +80,11 @@
     const displayHint = function () {
         if (hintParagraph.display === "block") {
             hintParagraph.display = "none";
-            hintButton.innerHTML = "Hint";
+            hintButton.innerHTML = "Months hint";
             hintParagraph.innerHTML = ``;
         } else {
             hintParagraph.display = "block";
-            hintButton.innerHTML = "Hide hint";
+            hintButton.innerHTML = "Hide months hint";
             hintParagraph.innerHTML = `
             I - January<br>
             II - February<br>
