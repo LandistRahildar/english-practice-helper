@@ -1,10 +1,10 @@
 {
-    const randomNumbersButton = document.getElementById("randomNumbersButton");
-    const randomNumbersParagraph = document.getElementById("randomNumbersParagraph");
+    const randomHundredsNumbersButton = document.getElementById("randomHundredsNumbersButton");
+    const randomHundredsNumbersParagraph = document.getElementById("randomHundredsNumbersParagraph");
 
-    const displayRandomNumbers = function () {
+    const displayRandomHundredNumber = function () {
 
-        const generateRandomNumber = function (min = 111, max = 999) {
+        const generateRandomHundredNumber = function (min = 111, max = 999) {
             const difference = max - min;
             let random = Math.random();
             random = Math.floor(random * difference);
@@ -12,21 +12,47 @@
             return random;
         }
 
-        randomNumbersParagraph.innerHTML = `
-        ${generateRandomNumber()}<br>
-        ${generateRandomNumber()}<br>
-        ${generateRandomNumber()}<br>
-        ${generateRandomNumber()}<br>
-        ${generateRandomNumber()}<br>
+        randomHundredsNumbersParagraph.innerHTML = `
+        ${generateRandomHundredNumber()}<br>
+        ${generateRandomHundredNumber()}<br>
+        ${generateRandomHundredNumber()}<br>
+        ${generateRandomHundredNumber()}<br>
+        ${generateRandomHundredNumber()}<br>
         `;
     }
 
     //idea: text in button after click can change for 'another random numbers'
-    randomNumbersButton.addEventListener("click", displayRandomNumbers);
+    randomHundredsNumbersButton.addEventListener("click", displayRandomHundredNumber);
 }
 
 {
-    //here will be code for random numbers > 1111 < 9999, because it will be great warm-up before dates 
+    //here will be code for random numbers > 1111 < 9999, because it's readen differently than years
+    
+    const randomThousandsNumbersButton = document.getElementById("randomThousandsNumbersButton");
+    const randomThousandsNumbersParagraph = document.getElementById("randomThousandsNumbersParagraph");
+
+    const displayRandomThousandNumber = function () {
+        
+        const generateRandomThousandNumber = function (min = 1111, max = 9999) {
+            const difference = max - min;
+            let random = Math.random();
+            random = Math.floor(random * difference);
+            random = random + min;
+            return random;
+        }
+        
+        randomThousandsNumbersParagraph.innerHTML = `
+        ${generateRandomThousandNumber()}<br>
+        ${generateRandomThousandNumber()}<br>
+        ${generateRandomThousandNumber()}<br>
+        ${generateRandomThousandNumber()}<br>
+        ${generateRandomThousandNumber()}<br>
+        `;
+    }
+  
+    //idea: text in button after click can change for 'another random numbers'
+    randomThousandsNumbersButton.addEventListener("click", displayRandomThousandNumber);
+
 }
 
 {
@@ -89,7 +115,7 @@
             I - January<br>
             II - February<br>
             III - March<br>
-            VI - April<br>
+            IV - April<br>
             V - May<br>
             VI - June<br>
             VII - July<br>
