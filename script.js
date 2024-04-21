@@ -65,6 +65,51 @@
 }
 
 {
+    const randomTimesButton = document.getElementById("randomTimesButton");
+    const randomTimesParagraph = document.getElementById("randomTimesParagraph");
+ 
+    const timeType = ['AM', 'PM'];
+
+    const randomTime = function () {
+
+        //when hours or minutes are one digit should have '0' before that digit
+
+        const randomHour = function (min = 0, max = 12) {
+            const difference = max - min;
+            let random = Math.random();
+            random = Math.floor(random  * difference);
+            random = random + min;
+            return random;
+        }
+
+        const randomMinute = function (min = 1, max = 60) {
+            const difference = max - min;
+            let random = Math.random();
+            random = Math.floor(random * difference);
+            random = random + min;
+            return random;
+        }
+
+        const firstRandomTimeType = Math.floor(Math.random() * timeType.length);
+        const secondRandomTimeType = Math.floor(Math.random() * timeType.length);
+        const thirdRandomTimeType = Math.floor(Math.random() * timeType.length);
+        const fourthRandomTimeType = Math.floor(Math.random() * timeType.length);
+        const fifthRandomTimeType = Math.floor(Math.random() * timeType.length);
+
+        randomTimesParagraph.innerHTML = `
+        ${randomHour()}:${randomMinute()} ${timeType[firstRandomTimeType]}<br>
+        ${randomHour()}:${randomMinute()} ${timeType[secondRandomTimeType]}<br>
+        ${randomHour()}:${randomMinute()} ${timeType[thirdRandomTimeType]}<br>
+        ${randomHour()}:${randomMinute()} ${timeType[fourthRandomTimeType]}<br>
+        ${randomHour()}:${randomMinute()} ${timeType[fifthRandomTimeType]}<br>
+        `;
+    }
+
+    randomTimesButton.addEventListener("click", randomTime);
+
+}
+
+{
     const randomDatesButton = document.getElementById("randomDatesButton");
     const randomDatesParagraph = document.getElementById("randomDatesParagraph");
 
