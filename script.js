@@ -15,7 +15,7 @@
         if (randomHundredsNumbersParagraph.style.display === "none") {
             randomHundredsNumbersButton.innerHTML = "Random numbers hundreds";
         } else {
-            randomHundredsNumbersButton.innerHTML = "Another hundreds"
+            randomHundredsNumbersButton.innerHTML = "Another hundreds";
         }
 
         randomHundredsNumbersParagraph.innerHTML = `
@@ -48,7 +48,7 @@
         if (randomThousandsNumbersParagraph.style.display === "none") {
             randomThousandsNumbersButton.innerHTML = "Random thousands";
         } else {
-            randomThousandsNumbersButton.innerHTML = "Another thousands"
+            randomThousandsNumbersButton.innerHTML = "Another thousands";
         }
 
         randomThousandsNumbersParagraph.innerHTML = `
@@ -90,6 +90,12 @@
             return random;
         }
 
+        if (randomTimesParagraph.style.display === "none") {
+            randomTimesButton.innerHTML = "Random times";
+        } else {
+            randomTimesButton.innerHTML = "Another times";
+        }
+
         const firstRandomTimeType = Math.floor(Math.random() * timeType.length);
         const secondRandomTimeType = Math.floor(Math.random() * timeType.length);
         const thirdRandomTimeType = Math.floor(Math.random() * timeType.length);
@@ -106,7 +112,6 @@
     }
 
     randomTimesButton.addEventListener("click", randomTime);
-
 }
 
 {
@@ -149,12 +154,16 @@
             randomDatesButton.innerHTML = "Another dates";
         }
 
+        // if (randomDay = '1') {
+        //     alert("alert");
+        // }
+
         //here should be one line instead of five; how to make better version of code for this stupid months?
         randomDatesParagraph.innerHTML = `
         ${randomDay()} ${months[firstRandomMonth]} ${generateRandomYear()}<br>
         ${randomDay()} ${months[secondRandomMonth]} ${generateRandomYear()}<br>
         ${randomDay()} ${months[thirdRandomMonth]} ${generateRandomYear()}<br>
-        ${randomDay()} ${months[fourthRandomMonth]} ${generateRandomYear()}<br>
+        ${randomDay()} ${months[fourthRandomMonth]} ${generateRandomYear()}<br> 
         ${randomDay()} ${months[fifthRandomMonth]} ${generateRandomYear()}<br>
         `;
     }
