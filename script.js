@@ -1,10 +1,10 @@
 {
-    const randomHundredsNumbersButton = document.getElementById("randomHundredsNumbersButton");
-    const randomHundredsNumbersParagraph = document.getElementById("randomHundredsNumbersParagraph");
+    const randomDigitsButton = document.getElementById("randomDigitsButton");
+    const randomDigitsParagraph = document.getElementById("randomDigitsParagraph");
 
-    const displayRandomHundredNumber = function () {
+    const displayRandomDigit = function () {
 
-        const generateRandomHundredNumber = function (min = 111, max = 999) {
+        const generateRandomDigit = function (min = 1, max = 9) {
             const difference = max - min;
             let random = Math.random();
             random = Math.floor(random * difference);
@@ -12,31 +12,33 @@
             return random;
         }
 
-        if (randomHundredsNumbersParagraph.style.display === "none") {
-            randomHundredsNumbersButton.innerHTML = "Random numbers hundreds";
-        } else {
-            randomHundredsNumbersButton.innerHTML = "Another hundreds";
-        }
+        //additional '0' before every digit here and to not generate the same numbers
 
-        randomHundredsNumbersParagraph.innerHTML = `
-        ${generateRandomHundredNumber()}<br>
-        ${generateRandomHundredNumber()}<br>
-        ${generateRandomHundredNumber()}<br>
-        ${generateRandomHundredNumber()}<br>
-        ${generateRandomHundredNumber()}<br>
+        randomDigitsParagraph.innerHTML = `
+        ${generateRandomDigit()}<br>
+        ${generateRandomDigit()}<br>
+        ${generateRandomDigit()}<br>
+        ${generateRandomDigit()}<br>
+        ${generateRandomDigit()}<br>
         `;
+
+        if (randomDigitsParagraph.style.display === "none") {
+            randomDigitsButton.innerHTML = "Random digits";
+        } else {
+            randomDigitsButton.innerHTML = "Another digits";
+        }
     }
 
-    randomHundredsNumbersButton.addEventListener("click", displayRandomHundredNumber);
+    randomDigitsButton.addEventListener("click", displayRandomDigit);
 }
 
 {
-    const randomThousandsNumbersButton = document.getElementById("randomThousandsNumbersButton");
-    const randomThousandsNumbersParagraph = document.getElementById("randomThousandsNumbersParagraph");
+    const randomHundredsButton = document.getElementById("randomHundredsButton");
+    const randomHundredsParagraph = document.getElementById("randomHundredsParagraph");
 
-    const displayRandomThousandNumber = function () {
+    const displayRandomHundred = function () {
 
-        const generateRandomThousandNumber = function (min = 1111, max = 9999) {
+        const generateRandomHundred = function (min = 111, max = 999) {
             const difference = max - min;
             let random = Math.random();
             random = Math.floor(random * difference);
@@ -44,40 +46,66 @@
             return random;
         }
 
-
-        if (randomThousandsNumbersParagraph.style.display === "none") {
-            randomThousandsNumbersButton.innerHTML = "Random thousands";
-        } else {
-            randomThousandsNumbersButton.innerHTML = "Another thousands";
-        }
-
-        randomThousandsNumbersParagraph.innerHTML = `
-        ${generateRandomThousandNumber()}<br>
-        ${generateRandomThousandNumber()}<br>
-        ${generateRandomThousandNumber()}<br>
-        ${generateRandomThousandNumber()}<br>
-        ${generateRandomThousandNumber()}<br>
+        randomHundredsParagraph.innerHTML = `
+        ${generateRandomHundred()}<br>
+        ${generateRandomHundred()}<br>
+        ${generateRandomHundred()}<br>
+        ${generateRandomHundred()}<br>
+        ${generateRandomHundred()}<br>
         `;
+
+        if (randomHundredsParagraph.style.display === "none") {
+            randomHundredsButton.innerHTML = "Random hundreds";
+        } else {
+            randomHundredsButton.innerHTML = "Another hundreds";
+        }
     }
 
-    randomThousandsNumbersButton.addEventListener("click", displayRandomThousandNumber);
+    randomHundredsButton.addEventListener("click", displayRandomHundred);
+}
 
+{
+    const randomThousandsButton = document.getElementById("randomThousandsButton");
+    const randomThousandsParagraph = document.getElementById("randomThousandsParagraph");
+
+    const displayRandomThousand = function () {
+
+        const generateRandomThousand = function (min = 1111, max = 9999) {
+            const difference = max - min;
+            let random = Math.random();
+            random = Math.floor(random * difference);
+            random = random + min;
+            return random;
+        }
+
+        randomThousandsParagraph.innerHTML = `
+        ${generateRandomThousand()}<br>
+        ${generateRandomThousand()}<br>
+        ${generateRandomThousand()}<br>
+        ${generateRandomThousand()}<br>
+        ${generateRandomThousand()}<br>
+        `;
+
+        if (randomThousandsParagraph.style.display === "none") {
+            randomThousandsButton.innerHTML = "Random thousands";
+        } else {
+            randomThousandsButton.innerHTML = "Another thousands";
+        }
+    }
+
+    randomThousandsButton.addEventListener("click", displayRandomThousand);
 }
 
 {
     const randomTimesButton = document.getElementById("randomTimesButton");
     const randomTimesParagraph = document.getElementById("randomTimesParagraph");
- 
-    const timeType = ['AM', 'PM'];
 
     const randomTime = function () {
-
-        //when hours or minutes are one digit should have '0' before that digit
 
         const randomHour = function (min = 0, max = 12) {
             const difference = max - min;
             let random = Math.random();
-            random = Math.floor(random  * difference);
+            random = Math.floor(random * difference);
             random = random + min;
             return random;
         }
@@ -90,17 +118,15 @@
             return random;
         }
 
-        if (randomTimesParagraph.style.display === "none") {
-            randomTimesButton.innerHTML = "Random times";
-        } else {
-            randomTimesButton.innerHTML = "Another times";
-        }
+        const timeType = ['AM', 'PM'];
 
         const firstRandomTimeType = Math.floor(Math.random() * timeType.length);
         const secondRandomTimeType = Math.floor(Math.random() * timeType.length);
         const thirdRandomTimeType = Math.floor(Math.random() * timeType.length);
         const fourthRandomTimeType = Math.floor(Math.random() * timeType.length);
         const fifthRandomTimeType = Math.floor(Math.random() * timeType.length);
+
+        //additional '0' before single hour or minute digit here
 
         randomTimesParagraph.innerHTML = `
         ${randomHour()}:${randomMinute()} ${timeType[firstRandomTimeType]}<br>
@@ -109,6 +135,12 @@
         ${randomHour()}:${randomMinute()} ${timeType[fourthRandomTimeType]}<br>
         ${randomHour()}:${randomMinute()} ${timeType[fifthRandomTimeType]}<br>
         `;
+
+        if (randomTimesParagraph.style.display === "none") {
+            randomTimesButton.innerHTML = "Random times";
+        } else {
+            randomTimesButton.innerHTML = "Another times";
+        }
     }
 
     randomTimesButton.addEventListener("click", randomTime);
@@ -117,8 +149,6 @@
 {
     const randomDatesButton = document.getElementById("randomDatesButton");
     const randomDatesParagraph = document.getElementById("randomDatesParagraph");
-
-    const months = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII'];
 
     const randomDate = function () {
 
@@ -130,15 +160,13 @@
             return random;
         }
 
+        const months = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII'];
+
         const firstRandomMonth = Math.floor(Math.random() * months.length);
         const secondRandomMonth = Math.floor(Math.random() * months.length);
         const thirdRandomMonth = Math.floor(Math.random() * months.length);
         const fourthRandomMonth = Math.floor(Math.random() * months.length);
         const fifthRandomMonth = Math.floor(Math.random() * months.length);
-
-        // if (randomMonth == 'II') {
-        //     alert("It's February, baybe! It have max 29 days, we need to do something with that code to fix it!");
-        // }
 
         const generateRandomYear = function (min = 1000, max = 2022) {
             const difference = max - min;
@@ -148,17 +176,8 @@
             return random;
         }
 
-        if (randomDatesParagraph.style.display === "none") {
-            randomDatesButton.innerHTML = "Random dates";
-        } else {
-            randomDatesButton.innerHTML = "Another dates";
-        }
+        //additional '0' before single day digit here
 
-        // if (randomDay = '1') {
-        //     alert("alert");
-        // }
-
-        //here should be one line instead of five; how to make better version of code for this stupid months?
         randomDatesParagraph.innerHTML = `
         ${randomDay()} ${months[firstRandomMonth]} ${generateRandomYear()}<br>
         ${randomDay()} ${months[secondRandomMonth]} ${generateRandomYear()}<br>
@@ -166,6 +185,12 @@
         ${randomDay()} ${months[fourthRandomMonth]} ${generateRandomYear()}<br> 
         ${randomDay()} ${months[fifthRandomMonth]} ${generateRandomYear()}<br>
         `;
+
+        if (randomDatesParagraph.style.display === "none") {
+            randomDatesButton.innerHTML = "Random dates";
+        } else {
+            randomDatesButton.innerHTML = "Another dates";
+        }
     }
 
     randomDatesButton.addEventListener("click", randomDate);
