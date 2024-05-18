@@ -1,3 +1,5 @@
+//buttons for closing lists of numbers
+
 {
     const randomDigitsButton = document.getElementById("randomDigitsButton");
     const randomDigitsParagraph = document.getElementById("randomDigitsParagraph");
@@ -30,6 +32,38 @@
     }
 
     randomDigitsButton.addEventListener("click", displayRandomDigit);
+}
+
+{
+    const randomTensButton = document.getElementById("randomTensButton");
+    const randomTensParagraph = document.getElementById("randomTensParagraph");
+
+    const displayRandomTen = function () {
+
+        const generateRandomTen = function (min = 10, max = 99) {
+            const difference = max - min;
+            let random = Math.random();
+            random = Math.floor(random * difference);
+            random = random + min;
+            return random
+        }
+
+        randomTensParagraph.innerHTML = `
+        ${generateRandomTen()}<br>
+        ${generateRandomTen()}<br>
+        ${generateRandomTen()}<br>
+        ${generateRandomTen()}<br>
+        ${generateRandomTen()}<br>
+        `;
+
+        if (randomTensParagraph.style.display === "none") {
+            randomTensButton.innerHTML = "Random tens";
+        } else {
+            randomTensButton.innerHTML = "Another tens";
+        }
+    }
+
+    randomTensButton.addEventListener("click", displayRandomTen);
 }
 
 {
