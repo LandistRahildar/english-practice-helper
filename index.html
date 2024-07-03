@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>English practice helper</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="style.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap"
@@ -18,15 +20,19 @@
     <h4>Description</h4>
 
     <p>I'm learning english and this is my idea of website which can help improve learning process in some things I'm
-        (or maybe also others) struggling with. At this version of website user can get some random numbers, times, dates and hint for roman numerals months
+        (or maybe also others) struggling with. <br><br>
+        At this version of website user can get some random numbers, times,
+        dates and hint for roman numerals months
         names.</p>
 
-    <h4>Instuction of usage</h4>
+    <h4>Idea of usage</h4>
 
-    <p>If you struggling with numbers, times and dates in english just generate them by clicking on buttons and read it on voice. After some days of practice
+    <p>If you are struggling with numbers, times and dates in english just generate them by clicking on buttons and read it
+        on voice. After some days of practice
         you will see progress.</p><br>
 
     <button id="randomDigitsButton" class="button" title="Click for generate some random digs!">Random digits</button>
+    <button id="randomDigitsCompleteButton" class="button" title="Click for close random digits.">✔</button>
     <p id="randomDigitsParagraph"></p>
 
     <button id="randomTensButton" class="button" title="Click for generate some random tens!">Random tens</button>
@@ -49,19 +55,9 @@
 
     <button id="hintButton" class="button" title="Click for get hint!">Months hint</button>
     <p id="hintParagraph"></p>
-
-
-    <style>
-        body {
-            font-family: 'Lato', sans-serif;
-        }
-
-        .button {
-            cursor: pointer;
-        }
-    </style>
-
-    <script src="script.js"></script>
+    
 </body>
+
+<script src="script.js"></script>
 
 </html>
