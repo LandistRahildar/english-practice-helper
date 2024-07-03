@@ -1,12 +1,13 @@
 //buttons for closing lists of numbers
 
 {
-    const randomDigitsButton = document.getElementById("randomDigitsButton");
-    const randomDigitsParagraph = document.getElementById("randomDigitsParagraph");
+    const randomTeensButton = document.getElementById("randomTeensButton");
+    const randomTeensParagraph = document.getElementById("randomTeensParagraph");
+    const randomDigitsCompleteButton = document.getElementById("randomDigitsCompleteButton");
 
-    const displayRandomDigit = function () {
+    const displayRandomTeen = function () {
 
-        const generateRandomDigit = function (min = 1, max = 9) {
+        const generateRandomTeen = function (min = 11, max = 19) {
             const difference = max - min;
             let random = Math.random();
             random = Math.floor(random * difference);
@@ -14,24 +15,28 @@
             return random;
         }
 
-        //additional '0' before every digit here and to not generate the same numbers
+        //function to not generate the same numbers
 
-        randomDigitsParagraph.innerHTML = `
-        ${generateRandomDigit()}<br>
-        ${generateRandomDigit()}<br>
-        ${generateRandomDigit()}<br>
-        ${generateRandomDigit()}<br>
-        ${generateRandomDigit()}<br>
+        randomTeensParagraph.innerHTML = `
+        ${generateRandomTeen()}<br>
+        ${generateRandomTeen()}<br>
+        ${generateRandomTeen()}<br>
+        ${generateRandomTeen()}<br>
+        ${generateRandomTeen()}<br>
         `;
 
-        if (randomDigitsParagraph.style.display === "none") {
-            randomDigitsButton.innerHTML = "Random digits";
+        if (randomTeensParagraph.style.display === "none") {
+            randomTeensButton.innerHTML = "Random teens";
         } else {
-            randomDigitsButton.innerHTML = "Another digits";
+            randomTeensButton.innerHTML = "Another teens";
         }
     }
 
-    randomDigitsButton.addEventListener("click", displayRandomDigit);
+    const displayCompleteButton = function () {
+        randomDigitsCompleteButton.style.display = "block";
+    }
+
+    randomTeensButton.addEventListener("click", displayRandomTeen, displayCompleteButton);
 }
 
 {
@@ -40,7 +45,7 @@
 
     const displayRandomTen = function () {
 
-        const generateRandomTen = function (min = 10, max = 99) {
+        const generateRandomTen = function (min = 20, max = 99) {
             const difference = max - min;
             let random = Math.random();
             random = Math.floor(random * difference);
@@ -211,6 +216,7 @@
         }
 
         //additional '0' before single day digit here
+        //function to not generate non-existing dates here
 
         randomDatesParagraph.innerHTML = `
         ${randomDay()} ${months[firstRandomMonth]} ${generateRandomYear()}<br>
